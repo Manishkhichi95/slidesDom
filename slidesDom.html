@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+ <span>name:</span> <span id="p1">ABC</span>
+ <span>age:</span> <span id="p2">100</span>
+ <span>city:</span><span id="p3">Delhi</span>  
+  <button id="btn1" onclick="next()">Next</button>
+  <script>
+    var slides=[{
+        name:'ABC',
+        age:100,
+        city:"Delhi"
+    },
+    {
+        name:'XYZ',
+        age:90,
+        city:"ASR"
+    },
+    {
+        name:'PQR',
+        age:70,
+        city:"CHD"
+    }
+]
+
+
+
+let i=0;
+function next(){
+i++;
+    document.getElementById("p1").innerHTML=slides[i].name
+    document.getElementById("p2").innerHTML=slides[i].age
+    document.getElementById("p3").innerHTML=slides[i].city
+   
+        const btn=document.createElement("Button");
+        document.body.appendChild(btn)
+        btn.innerText="Previous" 
+        btn.onclick=function pre(){
+            i--;
+        document.getElementById("p1").innerHTML=slides[i].name
+        document.getElementById("p2").innerHTML=slides[i].age
+        document.getElementById("p3").innerHTML=slides[i].city 
+        if(slides[i]==slides[0] ){
+            btn1.style.display="inline-block"
+            btn.style.display="none"
+        }
+        }    
+        if(slides[i]==slides[2] ){
+            btn.style.display="none"
+            btn1.style.display="none"
+        }       
+}
+
+  </script>
+</body>
+</html>
